@@ -14,6 +14,9 @@
 
         <link rel="stylesheet" href="/assets/css/normalize.css">
         <link rel="stylesheet" href="/assets/css/main.css">
+        
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+        
         <script src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
         
         @yield('styles')
@@ -31,6 +34,8 @@
         <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="/assets/js/plugins.js"></script>
         <script src="/assets/js/main.js"></script>
+        
+        <script src="/assets/js/bootstrap.min.js"></script>
         
         @yield('scripts')
 
