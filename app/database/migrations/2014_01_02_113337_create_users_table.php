@@ -13,19 +13,18 @@ class CreateUsersTable extends Migration {
 	public function up()
 	{
 		Schema::dropIfExists('users');
-		Schema::table('users', function(Blueprint $table)
+		Schema::create('users', function(Blueprint $table)
 		{
-			$table->string('id', 8)->primary();
-            $table->string('fullname', 128);
-            $table->string('password', 64);
+            $table->increments('id');
             $table->string('email', 128);
+            $table->text('password');
+            $table->text('pass_dc');
             $table->timestamps();
 		});
 		
 		$default_user = new User;
-		$default_user->id       = 'admin';
-		$default_user->fullname = 'Administrator';
 		$default_user->password = Hash::make('password');
+		$default_user->pass_dc = Crypt::encrypt('password');
 		$default_user->email    = 'admin@localhost';
 		$default_user->save();
 	}

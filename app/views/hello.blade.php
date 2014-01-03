@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    Users!
+    <div class="container">
+    	User
+    </div>
 @stop

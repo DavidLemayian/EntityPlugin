@@ -15,3 +15,4 @@ Route::get('/', 'HomeController@showWelcome');
 
 // Authentication
 Route::get('login', 'AuthController@showLogin');
+Route::post('login', array('before' => 'csrf', 'uses' => 'AuthController@postLogin'));
