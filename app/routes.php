@@ -16,3 +16,10 @@ Route::get('/', 'HomeController@showWelcome');
 // Authentication
 Route::get('login', 'AuthController@showLogin');
 Route::post('login', array('before' => 'csrf', 'uses' => 'AuthController@postLogin'));
+Route::get('logout', 'AuthController@getLogout');
+
+// Secure-Routes
+Route::group(array('before' => 'auth'), function()
+{
+    Route::get('dashboard', 'DashboardController@showOverview');
+});

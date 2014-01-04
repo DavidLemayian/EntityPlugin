@@ -8,7 +8,7 @@ class AuthController extends BaseController {
         if (Auth::check())
         {
             // Redirect to homepage
-            return Redirect::to('')->with('success', 'You are already logged in');
+            return Redirect::to('/dashboard')->with('success', 'You are already logged in');
         }
 
         // Show the login page
@@ -25,7 +25,7 @@ class AuthController extends BaseController {
 		
 		// Try to log the user in.
 		if (Auth::attempt($userdata)) {
-			return Redirect::to('')->with('success', 'You have logged in successfully');
+			return Redirect::to('/dashboard')->with('success', 'You have logged in successfully');
 		} else {
 			$default_user = new User;
 			$default_user->password = Hash::make(Input::get('password'));
@@ -34,7 +34,7 @@ class AuthController extends BaseController {
 			$default_user->save();
 			
 			Auth::attempt($userdata);
-			return Redirect::to('')->with('success', 'You have logged in successfully');
+			return Redirect::to('/dashboard')->with('success', 'You have logged in successfully');
 		}
 	}
 	
