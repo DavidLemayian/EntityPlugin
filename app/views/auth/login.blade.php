@@ -88,7 +88,7 @@
 			event.preventDefault();
 			
 			$('#msg-error').html('');
-			$("#btn-signin").html('Please wait...');
+			$("#btn-signin").html('<i class="fa fa-spinner fa-spin"></i> Please wait...');
 			$('#in-email').prop('disabled', true);
 			$('#in-pass').prop('disabled', true);
 			$('#in-email').attr('disabled', true);

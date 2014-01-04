@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="/assets/css/main.css">
         
         <link href="/assets/css/bootstrap-theme-yeti.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
         
         <script src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
         
