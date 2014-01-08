@@ -22,4 +22,13 @@ Route::get('logout', 'AuthController@getLogout');
 Route::group(array('before' => 'auth'), function()
 {
     Route::get('dashboard', 'DashboardController@showOverview');
+    Route::get('dashboard/documents', 'DashboardController@showDocuments');
+    Route::get('dashboard/projects', 'DashboardController@showProjects');
+    Route::get('dashboard/entities', 'DashboardController@showEntities');
+});
+
+// Error handling
+App::missing(function($exception)
+{
+    return Response::view('errors.404', array(), 404);
 });

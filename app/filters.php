@@ -75,6 +75,6 @@ Route::filter('csrf', function()
 {
 	if (Session::token() != Input::get('_token'))
 	{
-		throw new Illuminate\Session\TokenMismatchException;
+    	return Response::view('errors.500', array(), 500);
 	}
 });

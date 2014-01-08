@@ -22,11 +22,11 @@ class CreateUsersTable extends Migration {
             $table->timestamps();
 		});
 		
-		$default_user = new User;
-		$default_user->password = Hash::make('password');
-		$default_user->pass_dc = Crypt::encrypt('password');
-		$default_user->email    = 'admin@localhost';
-		$default_user->save();
+//		$default_user = new User;
+//		$default_user->password = Hash::make('password');
+//		$default_user->pass_dc = Crypt::encrypt('password');
+//		$default_user->email    = 'admin@localhost';
+//		$default_user->save();
 	}
 
 	/**

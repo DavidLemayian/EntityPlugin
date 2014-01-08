@@ -45,10 +45,24 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
+						<li class="{{ isset($nav_main_home) ? 'active' : '' }}">{{ HTML::link('', 'Home') }}</li>
+						<li class="{{ isset($nav_main_about) ? 'active' : '' }}">{{ HTML::link('#', 'About') }}</li>
+						
 						@if ( Auth::guest() )
 							<li>{{ HTML::link('login', 'Sign In') }}</li>
 						@else
-							<li>{{ HTML::link('logout', 'Logout') }}</li>
+						
+							<li class="{{ isset($nav_main_dash) ? 'active' : '' }}">{{ HTML::link('dashboard', 'Dashboard') }}</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->email; }} <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li>{{ HTML::link('dashboard', 'Dashboard') }}</li>
+									<!--<li class="divider"></li>-->
+									<li>{{ HTML::link('logout', 'Logout') }}</li>
+								</ul>
+							</li>
+							<li> </li>
+							
 						@endif
 					</ul>
 				</div><!-- /.navbar-collapse -->
